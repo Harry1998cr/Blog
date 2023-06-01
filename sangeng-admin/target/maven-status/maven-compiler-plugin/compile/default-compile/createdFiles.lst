@@ -1,0 +1,6 @@
+com\sangeng\controller\UserController.class
+com\sangeng\controller\ArticleController.class
+com\sangeng\controller\CategoryController.class
+com\sangeng\controller\LinkController.class
+com\sangeng\controller\UploadController.class
+com\sangeng\controller\RoleController.class

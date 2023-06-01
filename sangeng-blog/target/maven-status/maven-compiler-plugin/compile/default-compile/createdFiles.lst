@@ -1,0 +1,6 @@
+com\sangeng\controller\BlogLoginController.class
+com\sangeng\controller\CommentController.class
+com\sangeng\controller\CategoryController.class
+com\sangeng\controller\LinkController.class
+com\sangeng\config\SecurityConfig.class
+com\sangeng\controller\UploadController.class
