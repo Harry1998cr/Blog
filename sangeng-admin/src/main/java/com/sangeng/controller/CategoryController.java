@@ -53,6 +53,7 @@ public class CategoryController {
         }
     }
 
+    @PreAuthorize("@ps.hasPermission('content:category:list')")
     @GetMapping("/list")
     public ResponseResult list(Integer pageNum, Integer pageSize,String name,String status){
         return categoryService.queryCategoryPage(pageNum,pageSize,name,status);

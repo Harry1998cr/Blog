@@ -9,6 +9,7 @@ import com.sangeng.domain.vo.TagVo;
 import com.sangeng.service.TagService;
 import com.sangeng.utils.BeanCopyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class TagController {
 //        return ResponseResult.okResult(tagService.list());
 //    }
 
+    @PreAuthorize("@ps.hasPermission('content:tag:index')")
     @GetMapping("/list")
     public ResponseResult<PageVo> list(Integer pageNum, Integer pageSize, TagListDto tagListDto){
         return tagService.pageTagList(pageNum,pageSize,tagListDto);

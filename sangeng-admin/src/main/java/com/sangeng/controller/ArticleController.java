@@ -5,6 +5,7 @@ import com.sangeng.domain.dto.AddArticleDto;
 import com.sangeng.domain.dto.UpdateArticleDto;
 import com.sangeng.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -19,6 +20,7 @@ public class ArticleController {
         return articleService.add(article);
     }
 
+    @PreAuthorize("@ps.hasPermission('content:article:list')")
     @GetMapping("list")
     public ResponseResult articlePage(Integer pageNum,Integer pageSize,String title, String summary){
         return articleService.articlePage(pageNum,pageSize,title,summary);
